@@ -12,6 +12,10 @@ figcaption{
     color:  #888888;
 }
 
+.featured h3{
+   font-size: xx-large;
+}
+
 .gridContainer{
     background: #ca272a;
     margin: 0 auto;
@@ -120,4 +124,5 @@ article.featured{
 
   
 }
+
 
