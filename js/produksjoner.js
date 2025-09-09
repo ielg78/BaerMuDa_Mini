@@ -17,8 +17,8 @@ forestillinger =[
     innhold: "Ble satt opp på Sandvika teater mars 2025",
     bildemappe: "Grease2025/",
     bilder: [
-         {bildefil: "Grease1.jpg", bildetekst: "", bildekreditt: "Nina Krømer"},
-         {bildefil: "Grease1.jpg", bildetekst: "", bildekreditt: "Nina Krømer"}
+         {bildefil: "grease1.jpg", bildetekst: "", bildekreditt: "Nina Krømer"},
+         {bildefil: "grease1.jpg", bildetekst: "", bildekreditt: "Nina Krømer"}
 
     ]              //Legg inn bildenavn med anførselstegn og komma mellom
 },
@@ -28,7 +28,7 @@ forestillinger =[
     innhold: "Ble satt opp på Sandvika teater våren 2024",
     bildemappe: "Aladdin2024/",
     bilder: [
-         {bildefil: "Aladdin1.jpg", bildetekst: "", bildekreditt: "Nina Krømer"}
+         {bildefil: "aladdin1.jpg", bildetekst: "", bildekreditt: "Nina Krømer"}
     ]              //Legg inn bildenavn med anførselstegn og komma mellom
 },
 {
@@ -37,8 +37,9 @@ forestillinger =[
     innhold: "Ble satt opp på Sandvika teater våren 2023",
     bildemappe: "Jungelboken2023/",
     bilder: [
-         {bildefil: "Jungelboken1.jpg", bildetekst: "", bildekreditt: "Nina Krømer"}
+         {bildefil: "jungelboken1.jpg", bildetekst: "", bildekreditt: "Nina Krømer"}
     ]              //Legg inn bildenavn med anførselstegn og komma mellom
 }
+
 
 ];
