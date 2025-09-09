@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BærMuDa Mini</title>
+    <link rel="stylesheet" href="css/gridLayout_copy.css">
+    <link rel="stylesheet" href="css/navLayout.css">
+</head>
+<body>
+    <div class="gridContainer">
+        <header></header>
+        <main>
+         <article class="featured">
+                <div>
+                </div>
+                <div>
+                    <h3>Våre forestillinger</h3>  
+                    <ul>
+                        <li>2026 Dalmatinerene</li>
+                        <li>2025 Grease</li>
+                        <li>2024 Jungelboken</li>
+                    </ul>
+                </div>
+          </article>
+        </main>
+        <footer></footer>
+    </div>
+
+    <script src="js/produksjoner.js"></script>
+    <script src="js/meny.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        let mainE = document.querySelector("main");
+
+
+        //function visForestillinger(ant, arrayMObjekter){
+            for(let i=0; i<forestillinger.length; i++){
+              let articleE = document.createElement("article");
+              let figureE = document.createElement("figure");
+              let imgE = document.createElement("img");
+              let figcaptionE = document.createElement("figcaption");
+              let divE = document.createElement("div");
+              let h3E = document.createElement("h3");
+              let pE = document.createElement("p");
+
+              //if(i==0){articleE.className = "featured";}
+              imgE.className = "ramme";
+              imgE.src = "img/"+forestillinger[i].bildemappe +forestillinger[i].bilder[0].bildefil;  //Henter det første bildet
+              imgE.alt = forestillinger[i].bilder[0].bildetekst;
+              figcaptionE.innerText = "Kilde: "+forestillinger[i].bilder[0].bildekreditt;
+
+              h3E.innerText = forestillinger[i].tittel;
+              pE.innerText = forestillinger[i].innhold;
+
+
+              figureE.appendChild(imgE);
+              figureE.appendChild(figcaptionE);
+
+              divE.appendChild(h3E);
+              divE.appendChild(pE);
+
+              articleE.appendChild(figureE);
+              articleE.appendChild(divE);
+
+              mainE.appendChild(articleE);
+            }
+            
+    </script>
+</body>
+</html>
