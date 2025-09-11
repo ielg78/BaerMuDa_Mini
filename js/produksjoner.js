@@ -121,15 +121,6 @@ forestillinger =[
     ],              //Legg inn bildenavn med anførselstegn og komma mellom
     youtube: "" 
 },
-{   dato: 2014,
-    tittel: "Peter Pan",
-    innhold: "",
-    bildemappe: "PeterPan2014/",
-    bilder: [
-         /*{bildefil: "", bildetekst: "", bildekreditt: ""}*/
-    ],              //Legg inn bildenavn med anførselstegn og komma mellom
-    youtube: "" 
-},
 {   dato: 2013,
     tittel: "Annie",
     innhold: "",
@@ -304,5 +295,6 @@ forestillinger =[
 </iframe>
 
 */
+
 
 
