@@ -36,7 +36,7 @@ forestillinger =[
     innhold: "Ble satt opp på Sandvika teater våren 2023",
     bildemappe: "Jungelboken2023/",
     bilder: [
-         {bildefil: "Jungelboken1.jpg", bildetekst: "", bildekreditt: "Nina Krømer"}
+         {bildefil: "jungelboken1.jpg", bildetekst: "", bildekreditt: "Nina Krømer"}
     ],              //Legg inn bildenavn med anførselstegn og komma mellom
     youtube: "https://youtu.be/9YkW_9yIpvs?si=WKfl_pyKLFN0oLgx" 
 },
@@ -304,4 +304,5 @@ forestillinger =[
 </iframe>
 
 */
+
 
