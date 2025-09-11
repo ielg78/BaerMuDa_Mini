@@ -34,7 +34,7 @@ forestillinger =[
 {   dato: 2023,
     tittel: "Jungelboken",
     innhold: "Ble satt opp på Sandvika teater våren 2023",
-    bildemappe: "jungelboken2023/",
+    bildemappe: "Jungelboken2023/",
     bilder: [
          {bildefil: "Jungelboken1.jpg", bildetekst: "", bildekreditt: "Nina Krømer"}
     ],              //Legg inn bildenavn med anførselstegn og komma mellom
@@ -304,3 +304,4 @@ forestillinger =[
 </iframe>
 
 */
+
