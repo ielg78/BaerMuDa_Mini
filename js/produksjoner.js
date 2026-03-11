@@ -7,7 +7,7 @@ forestillinger =[
     innhold: "Kommer våren 2026",
     bildemappe: "Dalmatinerne2026/", 
     bilder: [   
-                {bildefil: "img1.jpg", bildetekst: "", bildekreditt: "Inger Elisabeth"}
+                {bildefil: "dalmatinerne1.jpg", bildetekst: "", bildekreditt: "Nina Krømer"}
             ],
     youtube: ""            
 },
@@ -295,6 +295,7 @@ forestillinger =[
 </iframe>
 
 */
+
 
 
 
