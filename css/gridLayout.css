@@ -61,6 +61,14 @@ article img{
  width: 90%;
 }
 
+.bildeTilHoyre img{
+
+}
+
+.bildeTilHoyre{
+  display: flex;
+}
+
 figcaption{
     text-align: left;
     margin-top: -10px;
