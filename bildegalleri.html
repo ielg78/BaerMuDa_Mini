@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.70">
+    
+    <title>BærMuDa Mini</title>
+    <link rel="stylesheet" href="css/gridLayout.css">
+    <link rel="stylesheet" href="css/navLayout.css">
+    <link rel="stylesheet" href="css/linkStyle.css">
+    <link rel="stylesheet" href="css/responsiveGalleri.css">
+    <style>
+        h1, p{
+          text-align: center; 
+        }
+        .pilVenstre{
+            display:inline-block;
+            transform: rotate(180deg);
+        }
+        h1 a {text-decoration:none;}
+        
+    </style>
+</head>
+<body>
+    <div class="gridContainer">
+        <header></header>
+        <main>  
+
+          <!--
+           <article class="featured">
+            <div>
+              <h2>Dalmatinerne 2026</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet atque sit molestias corporis quod quis velit at ea laborum? Quia repellendus nobis eveniet, eligendi obcaecati est odit molestias quisquam maxime voluptatem mollitia, explicabo atque tempore vitae optio? Asperiores, deserunt commodi?</p>
+            </div>
+            <figure>
+                <img class="ramme" src="img/img1.jpg" alt="featured img">
+                <figcaption>Tatt av Nina Krømer</figcaption>
+            </figure>
+          </article>
+          -->
+        
+
+        </main>
+          <footer></footer>
+    </div>
+    <script src="js/produksjoner.js"></script>
+    <script src="js/meny.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        //let indeks = 2;  
+        //hent fra nettadressen
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const indeks = Number(urlParams.get('indeks'));  
+        console.log(indeks);
+        
+        let mainE = document.querySelector("main");
+        let articleE = document.createElement("article");
+        let divE = document.createElement("div");
+        let h1E = document.createElement("h1");
+        let pE = document.createElement("p");
+        let nesteGalleri;
+        let forrigeGalleri;
+
+        let i=indeks+1; //TODO: Hva skjer hvis indeksen er på nest siste??
+        while(!(forestillinger[i].bilder.length > 1)){  //Hvis forrige års forestilling ikke har fler enn ett bilde 
+            if(forestillinger.length > i+1){   //Sjekk om indeksen ikke er høyere enn antall forestillinger
+                i++;
+            }
+            else{
+                i=0;     //Du er rundt start på starten igjen
+            }
+        }
+        forrigeGalleri = i;  //Indeksen til neste galleri er funnet
+        
+
+
+        i = indeks;
+        if(indeks-1 > 0){
+           i=indeks-1;
+        }else{
+           i=forestillinger.length-1;
+        }
+
+        while(!(forestillinger[i].bilder.length > 1)){
+            if(i-1 < 0){
+                i = forestillinger.length;
+            }
+              i--;
+        }
+        
+        /*console.log("Starter på "+i);
+        if(i==0){
+            i = forestillinger.length;
+            console.log("Indeks er "+forestillinger.length);
+        } 
+        while(stopp){
+        } 
+        while(forestillinger[i].bilder.length < 2){
+            if(i==0){
+                i = forestillinger.length;
+                console.log("While: Indeks er "+forestilling.length);
+            }else{
+                i--;
+            }
+        }*/
+
+        nesteGalleri = i;
+
+         articleE.className = "infoGalleri";
+         /*h1E.className = "overskriftGalleri";*/
+
+         
+         console.log("Før løkken");
+        for(let i=0; i<forestillinger.length; i++){
+
+            if(forestillinger[i].bilder.length != 0){
+                console.log(i+" true");
+            }else{
+                console.log(i+" false");
+            }
+        }
+
+
+
+
+         h1E.innerHTML = "<a href='bildegalleri.html?indeks="+forrigeGalleri+"'><span class='pilVenstre'>&#10148;</span></a> Galleri for " 
+                         + forestillinger[indeks].tittel +" "+ forestillinger[indeks].dato 
+                         + " <a href='bildegalleri.html?indeks="+nesteGalleri+"'><span>&#10148;</span></a>";
+         //h1E.innerHTML = "Galleri for " + forestillinger[indeks].tittel +" "+ forestillinger[indeks].dato ;               
+         pE.innerText = forestillinger[indeks].innhold;
+
+        divE.appendChild(h1E);
+        divE.appendChild(pE);
+        articleE.appendChild(divE);
+        mainE.appendChild(articleE);
+
+
+        for(let i=0; i<forestillinger[indeks].bilder.length; i++){
+             let articleE = document.createElement("article");
+             let figureE = document.createElement("figure");
+             let imgE = document.createElement("img");
+             let figcaptionE = document.createElement("figcaption");
+             imgE.className = "ramme";
+             imgE.src = "img/"+forestillinger[indeks].bildemappe +forestillinger[indeks].bilder[i].bildefil;  //Henter det første bildet
+             imgE.alt = forestillinger[indeks].bilder[i].bildetekst;
+             figcaptionE.innerText = "Kilde: "+forestillinger[indeks].bilder[i].bildekreditt;
+             figureE.appendChild(imgE);
+             figureE.appendChild(figcaptionE);
+             articleE.appendChild(figureE);
+             mainE.appendChild(articleE);
+
+        }
+
+       
+    </script>
+</body>
+</html>

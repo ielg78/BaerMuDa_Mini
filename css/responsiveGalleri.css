@@ -1,0 +1,29 @@
+/*reponsive hvis skjermstørrelsen er mindre enn 980px*/
+@media screen and (max-width: 980px){
+  
+    article{
+        grid-column: span 3;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        border-bottom:1px solid white;
+        padding-bottom: 10px;
+        padding-left: 30px;
+    }
+}
+
+/*reponsive hvis skjermstørrelsen er mindre enn 760px*/
+/*@media screen and (max-width: 760px){
+    article, article.featured{
+        display: block;
+        padding: 0 20px;
+    }
+
+    article.featured{
+        padding: 30px;
+    }
+
+  
+}*/

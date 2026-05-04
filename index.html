@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.70">
+    
     <title>BærMuDa Mini</title>
     <link rel="stylesheet" href="css/gridLayout.css">
     <link rel="stylesheet" href="css/navLayout.css">
+    <link rel="stylesheet" href="css/linkStyle.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <div class="gridContainer">
@@ -24,29 +27,6 @@
             </div>
           </article>
 
-          <article>
-            <img class="ramme" src="img/Grease2025/grease1.jpg" alt="article img">
-            <div>
-              <h3>Grease 2025</h3>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus nisi minus placeat hic animi eveniet consectetur voluptates aliquid, sunt accusamus!</p>
-            </div>
-          </article>
-
-          <article>
-            <img class="ramme" src="img/Aladdin2024/aladdin1.jpg" alt="article img">
-            <div>
-              <h3>Aladdin 2024</h3>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus nisi minus placeat hic animi eveniet consectetur voluptates aliquid, sunt accusamus!</p>
-            </div>
-          </article>
-           
-          <article>
-            <img class="ramme" src="img/jungelboken2023/jungelboken1.jpg" alt="article img">
-            <div>
-              <h3>Jungelboken 2023</h3>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus nisi minus placeat hic animi eveniet consectetur voluptates aliquid, sunt accusamus!</p>
-            </div>
-          </article>
         -->
 
         </main>
@@ -54,14 +34,15 @@
     </div>
 
     <script src="js/produksjoner.js"></script>
+    <script src="js/nyheter.js"></script>
     <script src="js/meny.js"></script>
     <script src="js/footer.js"></script>
     <script>
         let mainE = document.querySelector("main");
+        let teller = 0;
+        const MAKS = 6;  //Maks 6 nyheter på forsiden
 
-
-        //function visForestillinger(ant, arrayMObjekter){
-            for(let i=0; i<forestillinger.length; i++){
+            for(let i=0; i<nyhet.length; i++){
               let articleE = document.createElement("article");
               let figureE = document.createElement("figure");
               let imgE = document.createElement("img");
@@ -69,17 +50,63 @@
               let divE = document.createElement("div");
               let h3E = document.createElement("h3");
               let pE = document.createElement("p");
+             
 
-              if(i==0){
+              //TODO: Sjekk om nyheten har utlopt
+              //const d = new Date();
+              //const idag = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDay();
+              //console.log (idag);
+              //console.log(nyhet[i].registrert);
+
+              if(teller==0){
                 articleE.className = "featured";
                 h3E == document.createElement("h2");  //Litt større overskrift på første
               }
               imgE.className = "ramme";
-              imgE.src = "img/"+forestillinger[i].bildemappe +forestillinger[i].bilder[0].bildefil;  //Henter det første bildet
+              imgE.src = "img/Nyhet/"+nyhet[i].bilder[0].bildefil;  //Henter det første bildet
+              imgE.alt = nyhet[i].bilder[0].bildetekst;
+              figcaptionE.innerText = "Kilde: "+nyhet[i].bilder[0].bildekreditt;
+
+              h3E.innerText = nyhet[i].tittel;
+              pE.innerText = nyhet[i].innhold;
+
+
+              figureE.appendChild(imgE);
+              figureE.appendChild(figcaptionE);
+
+              divE.appendChild(h3E);
+              divE.appendChild(pE);
+
+              articleE.appendChild(figureE);
+              articleE.appendChild(divE);
+
+              mainE.appendChild(articleE);
+              teller++;
+            }
+
+
+        console.log(forestillinger.length);
+        //function visForestillinger(ant, arrayMObjekter){
+           for(let i=0; teller<MAKS; i++){
+              let articleE = document.createElement("article");
+              let figureE = document.createElement("figure");
+              let imgE = document.createElement("img");
+              let figcaptionE = document.createElement("figcaption");
+              let divE = document.createElement("div");
+              let h3E = document.createElement("h3");
+              let pE = document.createElement("p");
+              console.log(i);
+
+              if(teller==0){
+                articleE.className = "featured";
+                h3E == document.createElement("h2");  //Litt større overskrift på første, gjelder bare hvis det ikke er noen nyheter
+              }
+              imgE.className = "ramme";
+              imgE.src = "img/"+forestillinger[i].bildemappe +forestillinger[i].bilder[0].bildefil;  //Henter det første bildet i hver mappe
               imgE.alt = forestillinger[i].bilder[0].bildetekst;
               figcaptionE.innerText = "Kilde: "+forestillinger[i].bilder[0].bildekreditt;
 
-              h3E.innerText = forestillinger[i].tittel;
+              h3E.innerText = forestillinger[i].dato +" "+ forestillinger[i].tittel;
               pE.innerText = forestillinger[i].innhold;
 
 
@@ -93,6 +120,7 @@
               articleE.appendChild(divE);
 
               mainE.appendChild(articleE);
+              teller++;
             }
             
     </script>

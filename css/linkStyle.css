@@ -10,3 +10,10 @@ a:hover{
 a:focus{
     color:black;
 }
+
+
+.lenkeGalleri{  /*Lenkene må ha en annen farge enn rød når bakgrunnen er rød*/
+    color: white;
+    /*font-size:larger;*/
+    /*font-weight: bold;*/
+}

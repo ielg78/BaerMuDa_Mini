@@ -3,11 +3,12 @@
 <html lang="no">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.70">
     <title>BærMuDa Mini</title>
     <link rel="stylesheet" href="css/gridLayout.css">
     <link rel="stylesheet" href="css/navLayout.css">
     <link rel="stylesheet" href="css/linkStyle.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <div class="gridContainer">
@@ -32,11 +33,14 @@
     <script src="js/produksjoner.js"></script>
     <script src="js/meny.js"></script>
     <script src="js/footer.js"></script>
+    
     <script>
         let mainE = document.querySelector("main");
 
 
-        //function visForestillinger(ant, arrayMObjekter){
+        //function visForestillinger(ant, arrayObjekter){  
+  
+
             for(let i=0; i<forestillinger.length; i++){
               let articleE = document.createElement("article");
               let figureE = document.createElement("figure");
@@ -58,6 +62,9 @@
               }
 
               h3E.innerText = forestillinger[i].dato +" "+ forestillinger[i].tittel;
+              if(forestillinger[i].bilder.length>1){
+                h3E.innerHTML = "<a class='lenkeGalleri' href=bildegalleri.html?indeks="+i+">"+forestillinger[i].dato +" "+ forestillinger[i].tittel+"</a>";
+              }
               pE.innerText = forestillinger[i].innhold;
 
 
